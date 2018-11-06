@@ -56,8 +56,18 @@ var boot = {
 		game.load.image('boat', 'assets/boat.png');
 		game.load.image('scooter', 'assets/scooter.png');
 		game.load.image('logo', 'assets/logo.png');
+
+		//Controls & Buttons
 		game.load.image('music', 'assets/bg-music.png');
+		game.load.image('help', 'assets/help.png');
 		game.load.image('music-off', 'assets/bg-music-off.png');
+		game.load.image('cancel', 'assets/cancel.png');
+
+
+		//Popup Windows
+		game.load.image('helpPop', 'assets/helpPop.png');
+
+
 
 
 

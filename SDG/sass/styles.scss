@@ -2,6 +2,7 @@
 
 
 $primary-darkyellow: #dca73a;
+$primary-lightyellow: #fbc30a;
 $primary-darkblue: #5B95F4;
 $dark-pink: #EF9AB4;
 $light-pink: #FFCAE5;
@@ -46,18 +47,6 @@ a{
   color: $white;
 }
 
-nav{
-  background-color: $primary-darkblue;
-  height: 100px;
-  display:inline-block;
-}
-
-nav a{
-  font-size: 30px;
-  line-height: 1.5;
-  margin-top: 10px;
-  color: $white;
-}
 
 .title{
 	margin: 50px 0px 50px 0px;
@@ -76,21 +65,20 @@ nav a{
 .section1{
   
  height: 100vh;
- cursor: url('../assets/shrimp.png'), auto; 
+ cursor: url('../assets/fried-potatoes.png'), auto; 
 
 }
 
 .section2{
   
-  margin-top: 15%;
-  view-height: 100%;
-   cursor: url('../assets/jellyfish.png'), auto; 
+  margin-top: 20%;
+ 
 }
 
  
 .section-cards{
   position: static;
-  margin-top: 200px;
+  margin-top: 590px;
 }
 
 
@@ -103,6 +91,7 @@ nav a{
   margin: -150px;
   float: left;
   perspective: 500px;
+  background: $primary-darkyellow;
 }
 
 .content {
@@ -110,7 +99,6 @@ nav a{
   width: 100%;
   height: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
   transition: transform 1s;
   transform-style: preserve-3d;
 }
@@ -118,16 +106,32 @@ nav a{
 .card:hover .content {
   transform: rotateY( 180deg ) ;
   transition: transform 0.5s;
+  cursor: url('../assets/pizza.png'), auto; 
 }
 
-.front,
+.front{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: $primary-darkyellow;
+  line-height: 300px;
+  color: $white;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+
+
+
 .back {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: white;
+  background: yellow;
   line-height: 300px;
-  color: #03446A;
+  color: $primary-darkyellow;
   text-align: center;
   font-size: 60px;
   border-radius: 5px;
@@ -135,7 +139,7 @@ nav a{
 }
 
 .back {
-  background: #03446A;
-  color: white;
+  background: $white;
+  color: black;
   transform: rotateY( 180deg );
 }

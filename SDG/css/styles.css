@@ -28,17 +28,6 @@ a {
   margin-bottom: 20px;
   color: #ffffff; }
 
-nav {
-  background-color: #5B95F4;
-  height: 100px;
-  display: inline-block; }
-
-nav a {
-  font-size: 30px;
-  line-height: 1.5;
-  margin-top: 10px;
-  color: #ffffff; }
-
 .title {
   margin: 50px 0px 50px 0px;
   z-index: 2; }
@@ -52,16 +41,14 @@ nav a {
 
 .section1 {
   height: 100vh;
-  cursor: url("../assets/shrimp.png"), auto; }
+  cursor: url("../assets/fried-potatoes.png"), auto; }
 
 .section2 {
-  margin-top: 15%;
-  view-height: 100%;
-  cursor: url("../assets/jellyfish.png"), auto; }
+  margin-top: 20%; }
 
 .section-cards {
   position: static;
-  margin-top: 200px; }
+  margin-top: 590px; }
 
 .card {
   position: absolute;
@@ -71,7 +58,8 @@ nav a {
   height: 300px;
   margin: -150px;
   float: left;
-  perspective: 500px; }
+  perspective: 500px;
+  background: #dca73a; }
 
 .content {
   position: absolute;
@@ -83,24 +71,36 @@ nav a {
 
 .card:hover .content {
   transform: rotateY(180deg);
-  transition: transform 0.5s; }
+  transition: transform 0.5s;
+  cursor: url("../assets/pizza.png"), auto; }
 
-.front,
-.back {
+.front {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: white;
+  background: #dca73a;
   line-height: 300px;
-  color: #03446A;
+  color: #ffffff;
   text-align: center;
   font-size: 60px;
   border-radius: 5px;
   backface-visibility: hidden; }
 
 .back {
-  background: #03446A;
-  color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: yellow;
+  line-height: 300px;
+  color: #dca73a;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden; }
+
+.back {
+  background: #ffffff;
+  color: black;
   transform: rotateY(180deg); }
 
 /*# sourceMappingURL=styles.css.map */
