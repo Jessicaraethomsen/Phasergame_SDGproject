@@ -1,62 +1,66 @@
 (function() {
   const myQuestions = [
-    {
-      question: "What do they eat in japan?",
-      answers: {
-        a: "Sushi",
-        b: "Burgers",
-        c: "Tacos"
-      },
-      correctAnswer: "a"
+  {
+    question: "What do they eat in japan?",
+    answers: {
+      a: "Sushi",
+      b: "Burgers",
+      c: "Tacos"
     },
-    {
-      question: "What do they eat in italy",
-      answers: {
-        a: "Tacos",
-        b: "Pasta",
-        c: "Hotdogs"
-      },
-      correctAnswer: "b"
+    correctAnswer: "a"
+  },
+  {
+    question: "What do they eat in italy",
+    answers: {
+      a: "Tacos",
+      b: "Pasta",
+      c: "Hotdogs"
     },
+    correctAnswer: "b"
+  },
 
-    {
-      question: "What do they eat in Morroco",
-      answers: {
-        a: "CousCous",
-        b: "Apple Pie",
-        c: "Pizza"
-      },
-      correctAnswer: "a"
+  {
+    question: "What do they eat in Morroco",
+    answers: {
+      a: "CousCous",
+      b: "Apple Pie",
+      c: "Pizza"
     },
+    correctAnswer: "a"
+  },
 
-    {
-      question: "What do they eat in USA",
-      answers: {
-        a: "Tacos",
-        b: "Orange Juice",
-        c: "Hotdogs"
-      },
-      correctAnswer: "c"
+  {
+    question: "What do they eat in USA",
+    answers: {
+      a: "Tacos",
+      b: "Orange Juice",
+      c: "Hotdogs"
     },
-    {
-      question: "How can we make a difference with Hunger?",
-      answers: {
-        a: "More education",
-        b: "Support smaller farmers",
-        c: "Protect animals and small farms",
-        d: "All of the above"
-      },
-      correctAnswer: "d"
-    }
+    correctAnswer: "c"
+  },
+  {
+    question: "How can we make a difference with Hunger?",
+    answers: {
+      a: "More education",
+      b: "Support smaller farmers",
+      c: "Protect animals and small farms",
+      d: "All of the above"
+    },
+    correctAnswer: "d"
+  }
   ];
 
+
+
+
+
   function buildQuiz() {
-   
+
     const output = [];
 
     // for each question...
     myQuestions.forEach((currentQuestion, questionNumber) => {
-      
+
       //  HERE WE STORE THE AWNSERSstore the list of answer choices array
       const answers = [];
 
@@ -65,28 +69,31 @@
 
       for (letter in currentQuestion.answers) {
         // ...add an HTML radio button
-       
+
         answers.push(
           `<label>
-             <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-           </label>`
-        );
+          <input type="radio" name="question${questionNumber}" value="${letter}">
+          ${letter} :
+          ${currentQuestion.answers[letter]}
+          </label>`
+          );
       }
 
       // add this question and its answers to the output
       output.push(
         `<div class="slide">
-           <div class="question"> ${currentQuestion.question} </div>
-           <div class="answers"> ${answers.join("")} </div>
-         </div>`
-      );
+        <div class="question"> ${currentQuestion.question} </div>
+        <div class="answers"> ${answers.join("")} </div>
+        </div>`
+        );
     });
 
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join("");
   }
+
+
+//END OF BUILD QUIZ FUNCTION
 
 
 // Confetti Effect by Gtibo "Confetti Party"
@@ -103,10 +110,10 @@ function confettiEffect (){
   particleCount = 0,
   gravity = 0.5,
   colors = [
-    '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
-    '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50',
-    '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800',
-    '#FF5722', '#795548'
+  '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
+  '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50',
+  '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800',
+  '#FF5722', '#795548'
   ];
 
   for( var i = 0; i < 400; i++){
@@ -146,29 +153,29 @@ function confettiEffect (){
         this.y += this.velY;
 
         if(this.y < 0){
-           this.velY *= -0.2;
-           this.velX *= 0.9;
-        };
+         this.velY *= -0.2;
+         this.velX *= 0.9;
+       };
 
-        if(this.y > height){
-          this.anglespin = 0;
-          this.y = height;
-          this.velY *= -0.2;
-          this.velX *= 0.9;
-        };
+       if(this.y > height){
+        this.anglespin = 0;
+        this.y = height;
+        this.velY *= -0.2;
+        this.velX *= 0.9;
+      };
 
-        if(this.x > width ||this.x< 0){
-          this.velX *= -0.5;
-        };
-      },
-    });
+      if(this.x > width ||this.x< 0){
+        this.velX *= -0.5;
+      };
+    },
+  });
   }
 
   function drawScreen(){
-        context.globalAlpha = 1;
-        for( var i = 0; i < particle.length; i++){
-          particle[i].draw();
-        }
+    context.globalAlpha = 1;
+    for( var i = 0; i < particle.length; i++){
+      particle[i].draw();
+    }
   }
 
   function loadImage(url){
@@ -178,9 +185,9 @@ function confettiEffect (){
   }
 
   function update(){
-  context.clearRect(0,0,width,height);
-  drawScreen();
-  requestAnimationFrame(update);
+    context.clearRect(0,0,width,height);
+    drawScreen();
+    requestAnimationFrame(update);
   }
 
   update();
@@ -193,11 +200,11 @@ function confettiEffect (){
     return Math.floor(min + Math.random()* (max - min + 1));
   }
 
-   function convertToRadians(degree) {
-        return degree*(Math.PI/180);
-    }
+  function convertToRadians(degree) {
+    return degree*(Math.PI/180);
+  }
 
-    function drawStar(cx, cy, spikes, outerRadius, innerRadius,color) {
+  function drawStar(cx, cy, spikes, outerRadius, innerRadius,color) {
     var rot = Math.PI / 2 * 3;
     var x = cx;
     var y = cy;
@@ -207,15 +214,15 @@ function confettiEffect (){
     context.beginPath();
     context.moveTo(cx, cy - outerRadius)
     for (i = 0; i < spikes; i++) {
-        x = cx + Math.cos(rot) * outerRadius;
-        y = cy + Math.sin(rot) * outerRadius;
-        context.lineTo(x, y)
-        rot += step
+      x = cx + Math.cos(rot) * outerRadius;
+      y = cy + Math.sin(rot) * outerRadius;
+      context.lineTo(x, y)
+      rot += step
 
-        x = cx + Math.cos(rot) * innerRadius;
-        y = cy + Math.sin(rot) * innerRadius;
-        context.lineTo(x, y)
-        rot += step
+      x = cx + Math.cos(rot) * innerRadius;
+      y = cy + Math.sin(rot) * innerRadius;
+      context.lineTo(x, y)
+      rot += step
     }
 
     context.lineTo(cx, cy - outerRadius)
@@ -228,7 +235,7 @@ function confettiEffect (){
 
 
 
-  function showResults() {
+function showResults() {
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll(".answers");
 
@@ -236,7 +243,7 @@ function confettiEffect (){
     let numCorrect = 0;
 
     // for each question...
-      myQuestions.forEach((currentQuestion, questionNumber) => {
+    myQuestions.forEach((currentQuestion, questionNumber) => {
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
@@ -258,16 +265,20 @@ function confettiEffect (){
     });
 
 
-  if (numCorrect >= 3) {
+    if (numCorrect >= 4) {
      confettiEffect();
      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+         feedbackContainer.innerHTML = 'GOOD JOB EXPLORER!';
 
-    } else {
-      
+
+   } else {
+
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    feedbackContainer.innerHTML = 'TRY AGAIN and get 4/5 to see a SUPRISE';
 
 
-    }
+
+  }
 
     // show number of correct answers out of total
   }
@@ -281,8 +292,10 @@ function confettiEffect (){
 
     //displaying the buttons in the right order
     if (currentSlide === 0) {
-      previousButton.style.display = "none";
-      tryButton.style.display = "none";
+    previousButton.style.display = "none";
+    tryButton.style.display = "none";
+    submitButton.style.display = "none";
+
     } else {
       previousButton.style.display = "inline-block";
     }
@@ -290,7 +303,7 @@ function confettiEffect (){
     if (currentSlide === slides.length - 1) {
       nextButton.style.display = "none";
       submitButton.style.display = "inline-block";
-      tryButton.style.display = "inline-block";
+     //tryButton.style.display = "inline-block";
 
     } else {
       nextButton.style.display = "inline-block";
@@ -299,19 +312,24 @@ function confettiEffect (){
   }
 
  //Adding a number to the currentslide varible for the buttons
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
+ function showNextSlide() {
+  showSlide(currentSlide + 1);
+}
 
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+}
+
+function clearscore() {
+  numCorrect = 0;
+}
 
 
 
-  const quizContainer = document.getElementById("quiz");
-  const resultsContainer = document.getElementById("results");
-  const submitButton = document.getElementById("submit");
+const quizContainer = document.getElementById("quiz");
+const resultsContainer = document.getElementById("results");
+const feedbackContainer = document.getElementById("feedback");
+const submitButton = document.getElementById("submit");
 
   // display quiz right away
   buildQuiz();
@@ -323,21 +341,19 @@ function confettiEffect (){
   const tryButton = document.getElementById("tryAgain");
   const slides = document.querySelectorAll(".slide");
   let currentSlide = 0;
-
   showSlide(0);
+
 
 
   // on CLICK: show results
   submitButton.addEventListener("click", showResults);
-  tryButton.addEventListener("click", showSlide);
+  tryButton.addEventListener("click", clearscore );
   previousButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
 
 
+
 })();
-
-
-    
 
 
 

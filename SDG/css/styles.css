@@ -188,7 +188,12 @@ button {
   border: 0px solid #000; }
 
 #results {
-  margin-top: 5%;
+  margin-top: 3%;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 22px;
+  color: #ffffff; }
+
+#feedback {
   font-family: "Rammetto One", sans-serif;
   font-size: 22px;
   color: #ffffff; }
