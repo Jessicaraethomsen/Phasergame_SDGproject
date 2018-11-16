@@ -1,4 +1,5 @@
 (function() {
+
   const myQuestions = [
   {
     question: "What do they eat in japan?",
@@ -95,6 +96,7 @@
 
 //END OF BUILD QUIZ FUNCTION
 
+//Confetti is build using object literal
 
 // Confetti Effect by Gtibo "Confetti Party"
 //------------------------------------------------------------------
@@ -234,6 +236,12 @@ function confettiEffect (){
 }
 
 
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+
+
 
 function showResults() {
     // gather answer containers from our quiz
@@ -257,6 +265,7 @@ function showResults() {
         // color the answers green
         answerContainers[questionNumber].style.color = "#56c02a";
 
+
       } else {
         // if answer is wrong or blank
         // color the answers red
@@ -267,8 +276,10 @@ function showResults() {
 
     if (numCorrect >= 4) {
      confettiEffect();
+     play();
      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
          feedbackContainer.innerHTML = 'GOOD JOB EXPLORER!';
+
 
 
    } else {
